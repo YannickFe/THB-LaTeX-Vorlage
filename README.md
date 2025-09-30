@@ -18,3 +18,32 @@ Für tiefergehende Informationen empfehle ich die Dokumentationen der einzelnen 
 ## Lizenz
 
 Dieses Projekt ist unter den Bedingungen der [MIT Lizenz](http://en.wikipedia.org/wiki/MIT_License) öffentlich verfügbar.
+
+## Entwicklungsumgebung
+
+Das nachstehende Snippet einer sublime-build Konfigurationsdatei kann in Sublime verwendet werden.
+Dafür kann unter `Tools > Build System > New Build System ...` ein neuer Builder `LaTeX (Tectonic).sublime-build` erstellt werden. 
+Tectonic ist eine schlanke TeX-Engine, basierend auf XeTeX, und wird unter OSX mit `brew install tectonic` installiert.
+
+```sublime-build
+{
+  "shell_cmd": "tectonic \"$file\"",
+  "file_patterns": ["*.tex"],
+  "selector": "text.tex.latex",
+  "working_dir": "$file_path",
+  "variants": [
+    {
+      "name": "Clean",
+      "shell_cmd": "rm \"$file_base_name.pdf\""
+    },
+    {
+      "name": "Keep Intermediates",
+      "shell_cmd": "tectonic --keep-intermediates \"$file\""
+    },
+    {
+      "name": "Continue on Errors",
+      "shell_cmd": "tectonic -Z continue-on-errors \"$file\""
+    },
+  ]
+}
+```
