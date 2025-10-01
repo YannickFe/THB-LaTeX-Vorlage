@@ -31,6 +31,9 @@
 *.tdo
 *.toc
 
+# PDF-Dateien
+*.pdf
+
 # OS files
 .DS_Store
 
