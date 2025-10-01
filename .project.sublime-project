@@ -1,0 +1,12 @@
+{
+  "folders": [{ "path": "." }],
+
+  "build_systems": [
+    {
+      "name": "LaTeX (Tectonic, Project Main)",
+      "cmd": ["tectonic", "THBVorlageMain.tex"], // < change the main file here
+      "working_dir": "$project_path",
+      "path": "/opt/homebrew/bin:$PATH",
+    }
+  ]
+}
