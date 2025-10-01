@@ -30,3 +30,16 @@
 *.synctex.gz
 *.tdo
 *.toc
+
+# OS files
+.DS_Store
+
+# Sublime Workspaces & not Projects
+*.sublime-workspace
+!*.sublime-project
+
+# IntelliJ
+.idea/
+
+# VS Code
+.vscode/
